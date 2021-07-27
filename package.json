@@ -1,6 +1,6 @@
 {
   "name": "use-aria-live",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A React hook for Aria Live Regions",
   "type": "module",
   "source": "src/index.js",
