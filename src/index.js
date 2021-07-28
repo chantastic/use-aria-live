@@ -10,7 +10,7 @@ let visuallyHidden = {
   width: "1px",
 };
 
-export function useAriaLive(timeout) {
+export function useAriaLive(timeout = 5_000) {
   let [announcement, setAnnouncement] = React.useState(null);
 
   React.useEffect(() => {
