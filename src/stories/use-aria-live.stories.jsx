@@ -54,7 +54,4 @@ export default {
   component: Subject,
 };
 
-const Template = (args) => <Subject {...args} />;
-
-export const Simple = Template.bind({});
-Simple.args = {};
+export const Default = {};

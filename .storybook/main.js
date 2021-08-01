@@ -5,4 +5,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "aria-live-storybook-addon",
   ],
+  features: {
+    previewCsfV3: true,
+  },
 };
