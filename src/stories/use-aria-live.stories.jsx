@@ -1,6 +1,9 @@
 import React from "react";
 import { useAriaLive, PoliteAriaLive, AssertiveAriaLive } from "../index";
 
+import userEvent from "@testing-library/user-event";
+import { screen, waitFor } from "@testing-library/dom";
+
 function Subject(props) {
   let [politeAnnouncement, announcePolitely] = useAriaLive();
   let [assertiveAnnouncement, announceAssertively] = useAriaLive();
@@ -55,3 +58,31 @@ export default {
 };
 
 export const Default = {};
+
+function clickAction(assertiveness = "polite") {
+  return userEvent.click(
+    screen.getByText(
+      `Announce "Item added, ${
+        assertiveness === "assertive" ? "assertively" : "politely"
+      }".`
+    )
+  );
+}
+
+export const SinglePoliteAnnouncement = {
+  ...Default,
+  play: () => clickAction(),
+};
+
+export const SingleAssertiveAnnouncement = {
+  ...Default,
+  play: () => clickAction("assertive"),
+};
+
+export const MixedAnnouncements = {
+  ...Default,
+  play: () => {
+    clickAction();
+    clickAction("assertive");
+  },
+};
