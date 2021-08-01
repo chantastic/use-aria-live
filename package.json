@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/chantastic/use-aria-live#readme",
   "dependencies": {
+    "aria-live-storybook-addon": "0.0.2",
     "react": "^17.0.2"
   },
   "devDependencies": {
